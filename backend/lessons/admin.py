@@ -6,7 +6,6 @@ from lessons.models import *
 class ModuleLessonsInline(admin.StackedInline):
     model = Lesson
     extra = 0
-
     verbose_name_plural = 'список уроков в модуле'
 
 
