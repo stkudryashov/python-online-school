@@ -6,7 +6,7 @@ class BotAnswer(models.Model):
     Ответы для Telegram бота
     """
 
-    query = models.CharField(max_length=32, verbose_name='название запроса')
+    query = models.CharField(max_length=32, verbose_name='название запроса', unique=True)
     text = models.TextField(verbose_name='сообщение')
 
     def __str__(self):
