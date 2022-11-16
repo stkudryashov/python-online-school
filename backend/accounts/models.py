@@ -118,7 +118,7 @@ class UserType(models.Model):
     Модель группы пользователей
     """
 
-    id_name = models.CharField(max_length=32, verbose_name='идентификатор')
+    id_name = models.CharField(max_length=32, verbose_name='идентификатор', unique=True)
     title = models.CharField(max_length=32, verbose_name='название группы')
     permissions = models.ManyToManyField('UserPermission', verbose_name='права группы')
 

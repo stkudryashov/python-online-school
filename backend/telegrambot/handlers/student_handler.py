@@ -91,7 +91,7 @@ class StudentHandler:
         update.message.reply_text('Прошедшие уроки 📚', reply_markup=reply_markup)
 
     @staticmethod
-    def _lessons_view(update: Update.callback_query, schedule_id, back_location):
+    def _send_lessons_info(update: Update.callback_query, schedule_id, back_location):
         """
         Отправляет студенту выбранный урок (материалы, статус задания)
         """
@@ -156,7 +156,7 @@ class StudentHandler:
     @staticmethod
     def _send_student_schedule(update: Update):
         """
-        Отправляет пользователю его расписание
+        Отправляет студенту его расписание
         """
 
         user = User.objects.get(telegram_id=update.message.chat_id)
@@ -220,7 +220,7 @@ class StudentHandler:
         return StudentHandler.HOMEWORK_URL
 
     @classmethod
-    def _messages(cls, update: Update, context: CallbackContext):
+    def messages(cls, update: Update, context: CallbackContext):
         """
         Обработчик текстовых сообщений от нижнего меню
         """
@@ -244,7 +244,7 @@ class StudentHandler:
                 update.message.reply_text(BotAnswer.objects.get(query='Не понимаю').text)
 
     @classmethod
-    def _callbacks(cls, update: Update, context: CallbackContext):
+    def callbacks(cls, update: Update, context: CallbackContext):
         """
         Обработчик inline клавиатуры под сообщениями
         """
@@ -283,7 +283,7 @@ class StudentHandler:
             finally:
                 schedule_id = button_press.data.split(' ')[1]
                 back_location = button_press.data.split(' ')[2]
-                cls._lessons_view(button_press, schedule_id, back_location)
+                cls._send_lessons_info(button_press, schedule_id, back_location)
         elif 'HomeworksList' in button_press.data:
             try:
                 button_press.message.delete()
@@ -303,22 +303,16 @@ class StudentHandler:
                 return StudentHandler.HOMEWORK_URL
 
     @classmethod
-    def register_handlers(cls, dispatcher: Updater.dispatcher):
+    def get_homework_handler(cls):
         """
-        Регистрирует обработчики действий студентов
+        Возвращает homework_handler
         """
 
         homework_handler = ConversationHandler(
-            entry_points=[CallbackQueryHandler(cls._callbacks)],
+            entry_points=[CallbackQueryHandler(cls.callbacks, pattern='HomeworksSend')],
             states={
                 StudentHandler.HOMEWORK_URL: [MessageHandler(Filters.text & ~Filters.command, cls._homeworks_send)],
             },
             fallbacks=[CommandHandler('cancel', LoginHandler.start)],
         )
-        dispatcher.add_handler(homework_handler)
-
-        msg_handler = MessageHandler(Filters.text & ~Filters.command, cls._messages)
-        dispatcher.add_handler(msg_handler)
-
-        btn_handler = CallbackQueryHandler(cls._callbacks)
-        dispatcher.add_handler(btn_handler)
+        return homework_handler
