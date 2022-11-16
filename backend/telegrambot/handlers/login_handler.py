@@ -12,21 +12,15 @@ from telegrambot.services import get_user_keyboard
 from telegram.ext import CallbackContext, ConversationHandler, CommandHandler, MessageHandler, Filters
 
 
-class LoginStates:
-    """
-    Класс состояний входа в аккаунт
-    """
-
-    START_LOGIN, USER_EMAIL = range(2)
-
-
 class LoginHandler:
     """
     Класс с функциями для входа в аккаунт пользователя
     """
 
+    START_LOGIN, USER_EMAIL = range(2)
+
     @staticmethod
-    def _start(update: Update, context: CallbackContext):
+    def start(update: Update, context: CallbackContext):
         """
         Запускает сценарий входа в аккаунт или отправляет главное меню
         """
@@ -60,10 +54,10 @@ class LoginHandler:
                 reply_markup=LOGIN_BUTTON
             )
 
-            return LoginStates.START_LOGIN
+            return LoginHandler.START_LOGIN
 
         update.message.reply_text(BotAnswer.objects.get(query='Запрос почты').text)
-        return LoginStates.USER_EMAIL
+        return LoginHandler.USER_EMAIL
 
     @staticmethod
     def _email(update: Update, context: CallbackContext):
@@ -78,7 +72,7 @@ class LoginHandler:
 
             if not User.objects.filter(email=user_email, telegram_id__isnull=True).exists():
                 update.message.reply_text(BotAnswer.objects.get(query='Почта не найдена').text)
-                return LoginStates.USER_EMAIL
+                return LoginHandler.USER_EMAIL
 
             user = User.objects.get(email=user_email)
 
@@ -93,7 +87,7 @@ class LoginHandler:
             return ConversationHandler.END
         except ValidationError:
             update.message.reply_text(BotAnswer.objects.get(query='Ошибка почты').text)
-            return LoginStates.USER_EMAIL
+            return LoginHandler.USER_EMAIL
 
     @classmethod
     def get_login_handler(cls):
@@ -102,11 +96,11 @@ class LoginHandler:
         """
 
         login_handler = ConversationHandler(
-            entry_points=[CommandHandler('start', cls._start)],
+            entry_points=[CommandHandler('start', cls.start)],
             states={
-                LoginStates.START_LOGIN: [MessageHandler(Filters.text, cls._login)],
-                LoginStates.USER_EMAIL: [MessageHandler(Filters.text & ~Filters.command, cls._email)],
+                LoginHandler.START_LOGIN: [MessageHandler(Filters.text, cls._login)],
+                LoginHandler.USER_EMAIL: [MessageHandler(Filters.text & ~Filters.command, cls._email)],
             },
-            fallbacks=[CommandHandler('cancel', cls._start)],
+            fallbacks=[CommandHandler('cancel', cls.start)],
         )
         return login_handler
