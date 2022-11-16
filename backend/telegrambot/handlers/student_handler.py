@@ -1,9 +1,8 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
 from telegram.ext import (
-    CallbackContext, ConversationHandler, Updater,
-    MessageHandler, CallbackQueryHandler, Filters,
-    CommandHandler)
+    CallbackContext, ConversationHandler, MessageHandler,
+    CallbackQueryHandler, Filters, CommandHandler)
 
 from accounts.models import User
 from classrooms.models import Schedule
