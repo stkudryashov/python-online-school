@@ -59,7 +59,7 @@ class UserTypeAdmin(admin.ModelAdmin):
     Панель групп пользователей
     """
 
-    list_display = ('title',)
+    list_display = ('title', 'id_name')
     filter_horizontal = ('permissions',)
 
 
