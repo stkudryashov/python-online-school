@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'lessons.apps.LessonsConfig',
     'courses.apps.CoursesConfig',
     'classrooms.apps.ClassroomsConfig',
+
+    'telegrambot.apps.TelegrambotConfig',
 ]
 
 MIDDLEWARE = [
