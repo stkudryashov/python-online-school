@@ -1,5 +1,6 @@
 <template>
   <TheHeader />
+  <router-view />
 </template>
 
 <script>
