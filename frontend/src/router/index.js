@@ -5,6 +5,10 @@ import LoginPage from '../pages/LoginPage.vue'
 
 const routes = [
   {
+    path: '/',
+    name: 'Main'
+  },
+  {
     path: '/login',
     name: 'Login',
     meta: { layout: 'empty-layout' },

@@ -5,10 +5,10 @@
         <!-- Header Sections -->
         <div class="flex items-center flex-wrap">
           <!-- Logo -->
-          <a href="" class="flex flex-shrink-0 items-center block w-46 mr-12">
+          <router-link :to="{name: 'Main'}" class="flex flex-shrink-0 items-center block w-46 mr-12">
             <img src="/favicon.svg" alt="Logo" class="h-8 mr-3">
             <span>Python Online School</span>
-          </a>
+          </router-link>
 
           <!-- Courses -->
           <TheHeaderItem title="Наши курсы">
