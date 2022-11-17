@@ -7,11 +7,11 @@
 
       <div class="w-56 relative flex-shrink-0 mb-4">
         <input
-            v-model="loginForm.username"
+            v-model="loginForm.email"
             @keyup.enter="login"
-            type="text"
+            type="email"
             class="input-field"
-            placeholder="Имя пользователя"
+            placeholder="Email"
         >
         <div class="absolute top-0 left-0 w-8 h-full flex justify-center items-center">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       loginForm: {
-        username: '',
+        email: '',
         password: ''
       },
       hasErrors: false
@@ -75,9 +75,19 @@ export default {
   methods: {
     login() {
       const payload = {
-        username: this.loginForm.username,
+        email: this.loginForm.email,
         password: this.loginForm.password
       }
+
+      this.$store.dispatch('AuthModule/onLogin', payload)
+        .then(() => {
+          location.reload()
+        })
+        .catch(error => {
+          console.log(error)
+          this.hasErrors = true
+          setTimeout(() => { this.hasErrors = false }, 1000)
+        })
     }
   }
 }
