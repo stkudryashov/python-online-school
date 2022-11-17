@@ -1,6 +1,6 @@
 <template>
   <section class="flex mt-40">
-    <div class="flex flex-col items-center p-4 mx-auto w-80 bg-gray-100 rounded-2xl drop-shadow-xl">
+    <div class="flex flex-col items-center p-4 mx-auto w-80 bg-gray-100 rounded-2xl drop-shadow-xl max-h-72">
       <div class="text-xl text-black font-medium mb-4">
         <span>Вход в систему</span>
       </div>
@@ -40,21 +40,15 @@
       </button>
 
       <div class="text-xs text-black font-medium mt-12">
-        <span>Еще нет профиля? Зарегистрируйтесь</span>
+        <span>Еще нет профиля? <a class="underline cursor-pointer">Зарегистрируйтесь</a></span>
       </div>
     </div>
     <div class="flex flex-col mx-auto">
       <div class="text-xl text-black font-medium mb-4">
         <span>Изучай новое на Python Online School</span>
       </div>
-      <div class="text-xl text-black font-medium mb-4">
-        <span>Изучай новое на Python Online School</span>
-      </div>
-      <div class="text-xl text-black font-medium mb-4">
-        <span>Изучай новое на Python Online School</span>
-      </div>
-      <div class="text-xl text-black font-medium mb-4">
-        <span>Изучай новое на Python Online School</span>
+      <div>
+        <img src="/images/image.jpg" class="h-96 w-96 rounded-3xl">
       </div>
     </div>
   </section>

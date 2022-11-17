@@ -67,6 +67,10 @@ export const AuthModule = {
           defaultRequest.defaults.headers['Authorization'] = `Bearer ${token}`
           dispatch('onVerify')})
     },
+    onLogout({commit, dispatch}) {
+      commit('delToken')
+      dispatch('onVerify')
+    },
     onVerify({commit}) {
       return AuthAPI.verify()
         .then(response => {
