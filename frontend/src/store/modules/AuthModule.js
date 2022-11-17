@@ -26,6 +26,9 @@ export const AuthModule = {
     getUserInfo(state) {
       return state.user
     },
+    getUserToken(state) {
+      return state.credentials.token
+    },
     getUserPermissions(state) {
       return state.credentials.permissions
     }

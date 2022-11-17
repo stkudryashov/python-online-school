@@ -28,11 +28,8 @@ router.beforeEach(async (to, from, next) => {
 
   const isAuthenticated = localStorage.getItem('token')
 
-  if (to.name !== 'Login' && !isAuthenticated) {
-    next({name: 'Login'})
-  }
-  else if (to.name === 'Login' && isAuthenticated) {
-    next({name: 'Clients'})
+  if (to.name === 'Login' && isAuthenticated) {
+    next({name: 'Main'})
   }
   else next()
 })
