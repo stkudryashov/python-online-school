@@ -1,20 +1,13 @@
 <template>
-  <div class="flex justify-between mt-40">
-    <div class="">
-      <p>Hello World</p>
-    </div>
-    <div class="">
-      <p>Hello World</p>
-    </div>
-    <div class="">
-      <p>Hello World</p>
-    </div>
-  </div>
+  <TheHeader />
 </template>
 
 <script>
+import TheHeader from './components/header/TheHeader.vue';
+
 export default {
   components: {
+    TheHeader,
   },
   computed: {
   }
