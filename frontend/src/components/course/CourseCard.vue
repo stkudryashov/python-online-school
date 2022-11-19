@@ -23,7 +23,9 @@ export default {
 
 <style scoped>
 .course-card {
-  @apply flex flex-col bg-gray-100 rounded-2xl drop-shadow-xl p-2 w-56 h-36 mr-4 mb-4 hover:bg-gradient-to-tl hover:from-fuchsia-400 hover:to-fuchsia-200;
+  @apply flex flex-col bg-gray-100 rounded-2xl drop-shadow-xl p-2 w-56 h-36 mr-4 mb-4
+  hover:bg-gradient-to-tl hover:from-fuchsia-400 hover:to-fuchsia-200 hover:scale-105
+  transition-all ease-in-out duration-300;
 }
 
 </style>
