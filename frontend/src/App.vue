@@ -17,6 +17,6 @@ export default {
 
 <style>
 body {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
 </style>
