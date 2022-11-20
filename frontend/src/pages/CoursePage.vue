@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="container mx-auto mt-16">
     <div>{{ course.title }}</div>
   </section>
 </template>

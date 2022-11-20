@@ -5,7 +5,7 @@
         <!-- Header Sections -->
         <div class="flex items-center flex-wrap">
           <!-- Logo -->
-          <router-link :to="{name: 'Main'}" class="flex flex-shrink-0 items-center block w-46 mr-12">
+          <router-link :to="{name: 'Index'}" class="flex flex-shrink-0 items-center block w-46 mr-12">
             <img src="/favicon.svg" alt="Logo" class="h-8 mr-3">
             <span>Python Online School</span>
           </router-link>
@@ -28,7 +28,7 @@
         <!-- Personal Area -->
         <div class="flex items-center">
           <!-- User -->
-          <router-link :to="{name: 'Main'}" v-if="token">
+          <router-link :to="{name: 'Index'}" v-if="token">
             <TheHeaderItem :title="user.email" :prepend="false">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />

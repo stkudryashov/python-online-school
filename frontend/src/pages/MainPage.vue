@@ -4,7 +4,7 @@
     <div class="flex flex-wrap mt-2">
       <router-link v-for="course in courses"
                    :key="course.id"
-                   :to="{name: 'CoursesView', params: {courseId: course.id}}"
+                   :to="{name: 'CourseView', params: {courseId: course.id}}"
       >
         <CourseCard :id="course.id" :title="course.title" :description="course.description"/>
       </router-link>

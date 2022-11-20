@@ -11,7 +11,7 @@ import PageNotFound from '../pages/PageNotFound.vue'
 const routes = [
   {
     path: '/',
-    name: 'Main',
+    name: 'Index',
     component: MainPage
   },
   {
@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/courses/:courseId',
-    name: 'CoursesView',
+    name: 'CourseView',
     component: CoursePage,
   },
   {
@@ -42,7 +42,7 @@ router.beforeEach(async (to, from, next) => {
   const isAuthenticated = localStorage.getItem('token')
 
   if (to.name === 'Login' && isAuthenticated) {
-    next({name: 'Main'})
+    next({name: 'Index'})
   }
   else next()
 })
