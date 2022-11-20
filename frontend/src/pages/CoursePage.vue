@@ -1,6 +1,13 @@
 <template>
   <section class="container mx-auto mt-16">
-    <div>{{ course.title }}</div>
+    <div class="text-2xl">{{ course.title }}</div>
+    <div class="text-xl">{{ course.description }}</div>
+    <div class="flex flex-col mt-4">
+      <div v-for="module in course.modules" :key="module.id" class="bg-gray-100 rounded-2xl p-2 mb-2 w-3/5">
+        <div>{{ module.title }}</div>
+        <div>{{ module.description }}</div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -14,6 +21,12 @@ export default {
       course: {
         title: '',
         description: '',
+        modules: [
+          {
+            title: '',
+            description: '',
+          }
+        ]
       }
     }
   },
