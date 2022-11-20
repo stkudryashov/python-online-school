@@ -48,7 +48,7 @@
         <span>Изучай новое на Python Online School</span>
       </div>
       <div>
-        <img src="/images/image.jpg" class="h-96 w-96 rounded-3xl">
+        <img src="/images/image.jpg" alt="login" class="h-96 w-96 rounded-3xl">
       </div>
     </div>
   </section>
