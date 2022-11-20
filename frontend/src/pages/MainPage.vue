@@ -2,11 +2,12 @@
   <section class="container mx-auto mt-16">
     <h1 class="text-2xl">Наши курсы</h1>
     <div class="flex flex-wrap mt-2">
-      <CourseCard v-for="course in courses"
-                  :key="course.id"
-                  :title="course.title"
-                  :description="course.description"
-      />
+      <router-link v-for="course in courses"
+                   :key="course.id"
+                   :to="{name: 'CoursesView', params: {courseId: course.id}}"
+      >
+        <CourseCard :id="course.id" :title="course.title" :description="course.description"/>
+      </router-link>
     </div>
   </section>
 </template>
@@ -25,8 +26,8 @@ export default {
       courses: [
         {
           id: 1,
-          title: 'Test 1',
-          description: 'Test 1'
+          title: '',
+          description: ''
         },
       ]
     }

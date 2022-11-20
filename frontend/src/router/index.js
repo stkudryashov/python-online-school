@@ -4,6 +4,8 @@ import store from '../store/index.js'
 
 import MainPage from '../pages/MainPage.vue'
 import LoginPage from '../pages/LoginPage.vue'
+import CoursePage from '../pages/CoursePage.vue'
+import PageNotFound from '../pages/PageNotFound.vue'
 
 
 const routes = [
@@ -15,8 +17,17 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    meta: { layout: 'empty-layout' },
     component: LoginPage,
+  },
+  {
+    path: '/courses/:courseId',
+    name: 'CoursesView',
+    component: CoursePage,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'PageNotFound',
+    component: PageNotFound,
   },
 ]
 
