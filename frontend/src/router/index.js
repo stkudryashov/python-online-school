@@ -6,6 +6,7 @@ import MainPage from '../pages/MainPage.vue'
 import LoginPage from '../pages/LoginPage.vue'
 import CoursePage from '../pages/CoursePage.vue'
 import PageNotFound from '../pages/PageNotFound.vue'
+import PersonalPage from '../pages/PersonalPage.vue'
 
 
 const routes = [
@@ -18,6 +19,11 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: LoginPage,
+  },
+  {
+    path: '/personal',
+    name: 'Personal',
+    component: PersonalPage,
   },
   {
     path: '/courses/:courseId',

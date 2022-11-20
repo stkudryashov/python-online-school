@@ -16,10 +16,15 @@
 import CourseCard from '../components/course/CourseCard.vue'
 import { CoursesAPI } from '../api/courses/index.js'
 
+import Sidebar from '../components/sidebar/Sidebar.vue'
+import SidebarItem from '../components/sidebar/SidebarItem.vue'
+
 export default {
   name: 'MainPage',
   components: {
-    CourseCard
+    CourseCard,
+    Sidebar,
+    SidebarItem
   },
   data() {
     return {

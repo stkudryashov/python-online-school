@@ -1,16 +1,20 @@
 <template>
-  <TheHeader />
-  <router-view />
+  <Component :is="layout">
+    <RouterView />
+  </Component>
 </template>
 
 <script>
-import TheHeader from './components/header/TheHeader.vue';
+import DefaultLayout from './layouts/DefaultLayout.vue'
 
 export default {
   components: {
-    TheHeader,
+    DefaultLayout,
   },
   computed: {
+    layout() {
+      return this.$route.meta.layout || 'default-layout'
+    }
   }
 }
 </script>
@@ -18,5 +22,12 @@ export default {
 <style>
 body {
   font-family: Helvetica, Arial, sans-serif;
+}
+
+.layout-base {
+  @apply flex flex-col min-h-screen;
+}
+.layout-content {
+  @apply flex flex-1;
 }
 </style>
