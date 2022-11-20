@@ -5,8 +5,8 @@ import store from '../store/index.js'
 import MainPage from '../pages/MainPage.vue'
 import LoginPage from '../pages/LoginPage.vue'
 import CoursePage from '../pages/CoursePage.vue'
-import PageNotFound from '../pages/PageNotFound.vue'
 import PersonalPage from '../pages/PersonalPage.vue'
+import PageNotFound from '../pages/PageNotFound.vue'
 
 
 const routes = [
@@ -43,8 +43,10 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  /* Проверка на авторизацию пользователя */
   await store.dispatch('AuthModule/onVerify')
 
+  /* Получение токена из localStorage */
   const isAuthenticated = localStorage.getItem('token')
 
   if (to.name === 'Login' && isAuthenticated) {

@@ -23,11 +23,13 @@ export default {
     SidebarItem
   },
   computed: {
+    /* Получение статуса бара */
     isCollapsed() {
       return this.$store.getters['SidebarModule/getSidebarStatus']
     }
   },
   methods: {
+    /* Изменение состояния бара */
     sidebarShow() {
       this.$store.dispatch('SidebarModule/changeSidebarStatus')
     }

@@ -31,6 +31,7 @@ export default {
     }
   },
   methods: {
+    /* Получить курс по параметру из ссылки */
     getCourse() {
       const courseId = this.$route.params.courseId
 

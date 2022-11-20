@@ -36,6 +36,7 @@
             </TheHeaderItem>
           </router-link>
 
+          <!-- Logout -->
           <router-link :to="{name: 'Login'}" v-if="token" v-on:click="logout">
             <TheHeaderItem title="Выход" :prepend="false">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -67,6 +68,7 @@ export default {
     TheHeaderItem,
   },
   methods: {
+    /* Метод для выхода из аккаунта */
     logout() {
       this.$store.dispatch('AuthModule/onLogout')
         .then(() => {
@@ -77,9 +79,11 @@ export default {
     }
   },
   computed: {
+    /* Получение информации об аккаунте */
     user() {
       return this.$store.getters['AuthModule/getUserInfo']
     },
+    /* Получение токена пользователя для проверки авторизации */
     token() {
       return this.$store.getters['AuthModule/getUserToken']
     }

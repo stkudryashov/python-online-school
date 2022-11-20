@@ -2,10 +2,13 @@
   <section class="container mx-auto mt-16">
     <div>
       <div class="text-5xl cursor-default">
+        <!-- Platform -->
         <div class="bg-purple-200 rounded-full h-96 w-96 absolute -top-12 -left-20 -z-10"></div>
-        <h2 class="text-xl mb-4">Образовательная платформа</h2>
+        <h1 class="text-xl mb-4">Образовательная платформа</h1>
 
+        <!-- Description / Logo -->
         <div class="flex justify-between mb-12">
+          <!-- Description -->
           <div>
             <div>
               <p>Подробно рассказываем</p>
@@ -21,6 +24,7 @@
             </div>
           </div>
 
+          <!-- Logo -->
           <div class="relative">
             <img src="/images/snake.jpg" alt="logo" class="mr-60 logo-image">
             <div class="bg-blue-200 rounded-full h-80 w-80 absolute top-0 left-60 -z-10"></div>
@@ -31,8 +35,10 @@
       </div>
     </div>
 
+    <!-- Courses -->
     <div class="mt-8">
       <h2 class="text-3xl">Наши курсы</h2>
+
       <div class="flex flex-wrap mt-4">
         <router-link v-for="course in courses"
                      :key="course.id"
@@ -71,6 +77,7 @@ export default {
     }
   },
   methods : {
+    /* Получение списка доступных курсов */
     loadCourses() {
       CoursesAPI.loadCourses()
         .then(response => {

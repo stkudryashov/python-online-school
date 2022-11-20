@@ -1,10 +1,12 @@
 <template>
-  <section class="flex mt-40">
+  <section class="flex flex-1 mt-40">
+    <!-- Login Form -->
     <div class="flex flex-col items-center p-4 mx-auto w-80 bg-gray-100 rounded-2xl drop-shadow-xl max-h-72">
       <div class="text-xl text-black font-medium mb-4">
         <span>Вход в систему</span>
       </div>
 
+      <!-- Email Input -->
       <div class="w-56 relative flex-shrink-0 mb-4">
         <input
             v-model="loginForm.email"
@@ -20,6 +22,7 @@
         </div>
       </div>
 
+      <!-- Password Input -->
       <div class="w-56 relative flex-shrink-0 mb-4">
         <input
             v-model="loginForm.password"
@@ -39,14 +42,18 @@
         Войти
       </button>
 
+      <!-- Register Link -->
       <div class="text-xs text-black font-medium mt-12">
         <span>Еще нет профиля? <a class="underline cursor-pointer">Зарегистрируйтесь</a></span>
       </div>
     </div>
+
+    <!-- Image Block -->
     <div class="flex flex-col mx-auto">
       <div class="text-xl text-black font-medium mb-4">
         <span>Изучай новое на Python Online School</span>
       </div>
+
       <div>
         <img src="/images/image.jpg" alt="login" class="h-96 w-96 rounded-3xl">
       </div>
@@ -67,6 +74,7 @@ export default {
     }
   },
   methods: {
+    /* Метод для входа в аккаунт */
     login() {
       const payload = {
         email: this.loginForm.email,
