@@ -1,5 +1,5 @@
 <template>
-  <div class="header-item">
+  <div class="header-item hover:bg-gray-200 dark:hover:bg-gray-900">
     <div v-if="prepend" class="header-item-icon mr-2">
       <slot />
     </div>
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .header-item {
-  @apply flex items-center cursor-pointer px-3 h-16 hover:h-12 hover:bg-gray-200 hover:rounded-full;
+  @apply flex items-center cursor-pointer px-3 h-16 hover:h-12 hover:rounded-full;
 }
 
 .header-item-icon {

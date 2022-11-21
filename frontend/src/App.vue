@@ -1,5 +1,5 @@
 <template>
-  <Component :is="layout">
+  <Component :is="layout" :class="{ 'dark': isDarkMode }">
     <RouterView />
   </Component>
 </template>
@@ -14,6 +14,21 @@ export default {
   computed: {
     layout() {
       return this.$route.meta.layout || 'default-layout'
+    },
+    isDarkMode() {
+      const body = document.body
+
+      const darkModeStatus = this.$store.getters['ThemeModule/isDarkMode']
+
+      if (darkModeStatus) {
+        body.classList.remove('bg-gray-200')
+        body.classList.add('bg-gray-900')
+      } else {
+        body.classList.remove('bg-gray-900')
+        body.classList.add('bg-gray-200')
+      }
+
+      return darkModeStatus
     }
   }
 }

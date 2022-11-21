@@ -1,7 +1,7 @@
 <template>
-  <header class="bg-white shadow-2xl">
+  <header class="bg-white shadow-2xl text-black dark:bg-gray-800 dark:text-white transition-colors ease-in-out duration-300">
     <div class="container mx-auto text-sm">
-      <div class="flex justify-between items-center flex-wrap text-black">
+      <div class="flex justify-between items-center flex-wrap">
         <!-- Header Sections -->
         <div class="flex items-center flex-wrap">
           <!-- Logo -->
@@ -53,6 +53,8 @@
               </svg>
             </TheHeaderItem>
           </router-link>
+
+          <ThemeSwitcher class="ml-4" />
         </div>
       </div>
     </div>
@@ -60,11 +62,13 @@
 </template>
 
 <script>
-import TheHeaderItem from './TheHeaderItem.vue';
+import TheHeaderItem from './TheHeaderItem.vue'
+import ThemeSwitcher from '../ThemeSwitcher.vue'
 
 export default {
   name: 'TheHeader',
   components: {
+    ThemeSwitcher,
     TheHeaderItem,
   },
   methods: {

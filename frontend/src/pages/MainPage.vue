@@ -1,9 +1,9 @@
 <template>
-  <section class="container mx-auto mt-16">
+  <section class="container mx-auto mt-16 dark:text-white transition-colors ease-in-out duration-300">
     <div>
       <div class="text-5xl cursor-default">
         <!-- Platform -->
-        <div class="bg-purple-200 rounded-full h-96 w-96 absolute -top-12 -left-20 -z-10"></div>
+        <div class="bg-purple-200 dark:bg-purple-900 rounded-full h-96 w-96 absolute -top-12 -left-20 -z-10 transition-colors ease-in-out duration-300"></div>
         <h1 class="text-xl mb-4">Образовательная платформа</h1>
 
         <!-- Description / Logo -->
@@ -27,7 +27,7 @@
           <!-- Logo -->
           <div class="relative">
             <img src="/images/snake.jpg" alt="logo" class="mr-60 logo-image">
-            <div class="bg-blue-200 rounded-full h-80 w-80 absolute top-0 left-60 -z-10"></div>
+            <div class="bg-blue-200 dark:bg-blue-900 rounded-full h-80 w-80 absolute top-0 left-60 -z-10 transition-colors ease-in-out duration-300"></div>
           </div>
         </div>
 
@@ -95,10 +95,10 @@ export default {
 
 <style scoped>
 .logo-image {
-  @apply h-80 w-80 rounded-full z-10 hover:rotate-12 transition ease-in-out duration-500 drop-shadow-xl
+  @apply h-80 w-80 rounded-full z-10 hover:rotate-12 transition ease-in-out duration-500 drop-shadow-xl;
 }
 
 .python-word {
-  @apply text-blue-400 hover:text-blue-600 transition ease-in-out duration-300
+  @apply text-blue-400 hover:text-blue-600 transition ease-in-out duration-300;
 }
 </style>

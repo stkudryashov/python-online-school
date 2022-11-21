@@ -1,9 +1,9 @@
 <template>
-  <section class="container mx-auto mt-16">
+  <section class="container mx-auto mt-16 dark:text-white">
     <div class="text-2xl">{{ course.title }}</div>
     <div class="text-xl">{{ course.description }}</div>
     <div class="flex flex-col mt-4">
-      <div v-for="(module, index) in course.modules" :key="module.id" class="bg-gray-100 rounded-2xl p-2 mb-2 w-3/5">
+      <div v-for="(module, index) in course.modules" :key="module.id" class="bg-gray-100 rounded-2xl p-2 mb-2 w-3/5 dark:bg-gray-800">
         <div>{{ index + 1 }}. {{ module.title }}</div>
         <div>{{ module.description }}</div>
       </div>

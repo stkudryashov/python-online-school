@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-item">
+  <div class="sidebar-item hover:bg-gray-200 dark:hover:bg-gray-900">
     <div v-if="prepend" class="sidebar-item-icon mr-2">
       <slot />
     </div>
@@ -37,7 +37,7 @@ export default {
 
 <style scoped>
 .sidebar-item {
-  @apply flex items-center hover:h-12 hover:bg-gray-200 cursor-pointer px-3 h-12;
+  @apply flex items-center hover:h-12 cursor-pointer px-3 h-12;
 }
 
 .sidebar-item-icon {

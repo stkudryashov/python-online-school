@@ -17,6 +17,6 @@ export default {
 
 <style scoped>
 .not-found-block {
-  @apply flex items-center justify-center mt-24 text-black bg-gray-100 rounded-2xl drop-shadow-xl h-48
+  @apply flex items-center justify-center mt-24 text-black bg-gray-100 rounded-2xl drop-shadow-xl h-48;
 }
 </style>

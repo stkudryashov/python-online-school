@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 
 import { AuthModule } from './modules/AuthModule.js'
 import { SidebarModule } from './modules/SidebarModule.js'
+import { ThemeModule } from './modules/ThemeModule.js'
 
 const store = createStore({
   state () {
@@ -10,7 +11,8 @@ const store = createStore({
   },
   modules: {
     AuthModule,
-    SidebarModule
+    SidebarModule,
+    ThemeModule
   }
 })
 

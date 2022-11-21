@@ -1,8 +1,8 @@
 <template>
   <section class="flex flex-1 mt-40">
     <!-- Login Form -->
-    <div class="flex flex-col items-center p-4 mx-auto w-80 bg-gray-100 rounded-2xl drop-shadow-xl max-h-72">
-      <div class="text-xl text-black font-medium mb-4">
+    <div class="flex flex-col items-center p-4 mx-auto w-80 bg-gray-100 rounded-2xl drop-shadow-xl max-h-72 dark:bg-gray-800">
+      <div class="text-xl text-black font-medium mb-4 dark:text-white">
         <span>Вход в систему</span>
       </div>
 
@@ -43,14 +43,14 @@
       </button>
 
       <!-- Register Link -->
-      <div class="text-xs text-black font-medium mt-12">
+      <div class="text-xs text-black font-medium mt-12 dark:text-white">
         <span>Еще нет профиля? <a class="underline cursor-pointer">Зарегистрируйтесь</a></span>
       </div>
     </div>
 
     <!-- Image Block -->
     <div class="flex flex-col mx-auto">
-      <div class="text-xl text-black font-medium mb-4">
+      <div class="text-xl text-black font-medium mb-4 dark:text-white">
         <span>Изучай новое на Python Online School</span>
       </div>
 
