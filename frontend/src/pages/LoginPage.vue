@@ -55,7 +55,7 @@
       </div>
 
       <div>
-        <img src="/images/image.jpg" alt="login" class="h-96 w-96 rounded-3xl">
+        <img src="/images/image.jpg" alt="login" class="h-96 w-96 rounded-3xl drop-shadow-xl">
       </div>
     </div>
   </section>

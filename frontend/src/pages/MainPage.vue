@@ -95,7 +95,7 @@ export default {
 
 <style scoped>
 .logo-image {
-  @apply h-80 w-80 rounded-full z-10 hover:rotate-12 transition ease-in-out duration-500
+  @apply h-80 w-80 rounded-full z-10 hover:rotate-12 transition ease-in-out duration-500 drop-shadow-xl
 }
 
 .python-word {
