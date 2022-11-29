@@ -40,7 +40,7 @@ class LoginHandler:
             reply_markup=LOGIN_BUTTON
         )
 
-        return LoginStates.START_LOGIN
+        return LoginHandler.START_LOGIN
 
     @staticmethod
     def _login(update: Update, context: CallbackContext):

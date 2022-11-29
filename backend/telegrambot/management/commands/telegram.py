@@ -35,7 +35,7 @@ def callbacks(update: Update, context: CallbackContext):
 class Command(BaseCommand):
     def handle(self, *args, **options):
         defaults = Defaults(tzinfo=pytz.timezone('Europe/Moscow'))
-        updater = Updater('5324248177:AAFuPqwj3nGIciLxB9RXq0BIYznhEoTn08o', defaults=defaults)
+        updater = Updater('token', defaults=defaults)
 
         dispatcher = updater.dispatcher
 
