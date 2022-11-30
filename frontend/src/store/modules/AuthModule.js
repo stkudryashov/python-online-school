@@ -1,5 +1,5 @@
-import {AuthAPI} from '../../api/accounts/index.js'
-import {defaultRequest} from '../../api/config.js'
+import { AuthAPI } from '../../api/accounts/index.js'
+import { defaultRequest } from '../../api/config.js'
 
 import store from '../index.js'
 

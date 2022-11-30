@@ -7,7 +7,7 @@ import LoginPage from '../pages/LoginPage.vue'
 import CoursePage from '../pages/CoursePage.vue'
 
 import PersonalPage from '../pages/personal/PersonalPage.vue'
-import PersonalPageInfo from '../pages/personal/PersonalPageInfo.vue'
+import PersonalPageProfile from '../pages/personal/PersonalPageProfile.vue'
 import PersonalPageCourses from '../pages/personal/PersonalPageCourses.vue'
 
 import PageNotFound from '../pages/PageNotFound.vue'
@@ -30,9 +30,9 @@ const routes = [
     component: PersonalPage,
     children: [
       {
-        path: 'info',
+        path: 'profile',
         name: 'PersonalInfo',
-        component: PersonalPageInfo,
+        component: PersonalPageProfile,
       },
       {
         path: 'courses',

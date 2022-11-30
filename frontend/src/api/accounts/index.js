@@ -11,3 +11,10 @@ export const AuthAPI = {
     return defaultRequest.get(url)
   }
 }
+
+export const ProfileAPI = {
+  getProfile() {
+    const url = '/accounts/profile/'
+    return defaultRequest.get(url)
+  }
+}

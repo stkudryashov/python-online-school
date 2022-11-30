@@ -30,3 +30,11 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'email', 'password', 'first_name', 'last_name', 'type')
         read_only_fields = ('id',)
+
+
+class UserInfoSerializer(serializers.ModelSerializer):
+    user = UserSerializer(write_only=True)
+
+    class Meta:
+        model = UserInfo
+        fields = ('user', 'date_of_birth', 'phone_number', 'city', 'about_me')
