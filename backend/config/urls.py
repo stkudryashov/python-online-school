@@ -14,3 +14,6 @@ urlpatterns = [
     path('api/v1/accounts/', include('accounts.urls')),
     path('api/v1/courses/', include('courses.urls')),
 ]
+
+admin.site.site_header = 'Python Online School'
+admin.site.site_title = 'Python Online School'
