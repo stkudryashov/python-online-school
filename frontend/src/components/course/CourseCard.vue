@@ -1,5 +1,6 @@
 <template>
-  <div class="course-card bg-gray-100 dark:bg-gray-800 hover:from-fuchsia-300 hover:to-fuchsia-200 dark:hover:from-fuchsia-800 dark:hover:to-fuchsia-500">
+  <div class="course-card bg-gray-100 dark:bg-gray-800 hover:from-fuchsia-300
+  hover:to-fuchsia-200 dark:hover:from-fuchsia-800 dark:hover:to-fuchsia-500">
     <div class="text-xl">{{ title }}</div>
     <div class="text-sm">{{ description }}</div>
   </div>

@@ -1,6 +1,7 @@
 import { defaultRequest } from '../config.js'
 
 export const CoursesAPI = {
+  /* API для курсов */
   loadCourses() {
     const url = '/courses/'
     return defaultRequest.get(url)

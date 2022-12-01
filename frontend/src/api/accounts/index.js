@@ -1,6 +1,7 @@
 import { loginRequest, defaultRequest } from '../config.js'
 
 export const AuthAPI = {
+  /* API для авторизации */
   login(email, password) {
     const url = '/accounts/login/'
     const data = { email, password }
@@ -13,6 +14,7 @@ export const AuthAPI = {
 }
 
 export const ProfileAPI = {
+  /* API для профиля */
   getProfile() {
     const url = '/accounts/profile/'
     return defaultRequest.get(url)
