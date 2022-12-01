@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 
 from rest_framework import status
 
-from accounts.serializers import *
+from accounts.serializers import UserSerializer, UserInfoSerializer
 from accounts.models import UserInfo
 
 from rest_framework.permissions import IsAuthenticated
@@ -22,6 +22,10 @@ class TokenVerifyView(APIView):
 
 
 class UserInfoView(APIView):
+    """
+    View для редактирования профиля
+    """
+
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):

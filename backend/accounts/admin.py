@@ -5,7 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 from django.contrib.auth.models import Group
 
-from accounts.models import *
+from accounts.models import User, UserInfo, UserType, UserPermission
 
 
 @admin.register(User)

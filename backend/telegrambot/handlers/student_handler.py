@@ -1,8 +1,7 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 
-from telegram.ext import (
-    CallbackContext, ConversationHandler, MessageHandler,
-    CallbackQueryHandler, Filters, CommandHandler)
+from telegram.ext import ConversationHandler, MessageHandler, CommandHandler, CallbackQueryHandler
+from telegram.ext import CallbackContext, Filters
 
 from accounts.models import User
 from classrooms.models import Schedule
@@ -10,7 +9,6 @@ from courses.models import Course
 from telegrambot.models import BotAnswer
 
 from classrooms.services import StudentService, ClassroomService
-
 from telegrambot.handlers.login_handler import LoginHandler
 
 from telegram import Update

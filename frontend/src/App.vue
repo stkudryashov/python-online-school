@@ -36,7 +36,7 @@ export default {
 
 <style>
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Tahoma, Arial, sans-serif;
 }
 
 .layout-base {

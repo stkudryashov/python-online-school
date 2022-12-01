@@ -1,4 +1,4 @@
-from classrooms.models import *
+from classrooms.models import Classroom, Schedule, Homework
 from accounts.models import User
 
 from datetime import datetime, timedelta

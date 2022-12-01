@@ -1,16 +1,15 @@
 from django.core.management.base import BaseCommand
 
-from telegram.ext import (
-    Updater, Defaults, CommandHandler, MessageHandler,
-    CallbackQueryHandler, Filters, CallbackContext)
-
-from telegram import Update
-from accounts.models import User
+from telegram.ext import Updater, Defaults, Filters, CallbackContext
+from telegram.ext import CommandHandler, MessageHandler, CallbackQueryHandler
 
 from telegrambot.handlers.login_handler import LoginHandler
 from telegrambot.handlers.student_handler import StudentHandler
 from telegrambot.handlers.teacher_handler import TeacherHandler
 
+from telegram import Update
+
+from accounts.models import User
 from telegrambot.models import BotAnswer
 
 from telegrambot.services import change_user_type
@@ -19,6 +18,10 @@ import pytz
 
 
 def messages(update: Update, context: CallbackContext):
+    """
+    Обработка текстовых сообщений пользователя
+    """
+
     if not User.objects.filter(telegram_id=update.message.chat_id).exists():
         update.message.reply_text(BotAnswer.objects.get(query='Не понимаю').text)
         return
@@ -28,6 +31,10 @@ def messages(update: Update, context: CallbackContext):
 
 
 def callbacks(update: Update, context: CallbackContext):
+    """
+    Обработка нажатий на callback кнопки
+    """
+
     StudentHandler.callbacks(update, context)
     TeacherHandler.callbacks(update, context)
 

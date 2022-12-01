@@ -1,13 +1,17 @@
-from accounts.models import User, UserType
 from telegrambot import keyboards
 
 from telegram import Update
 from telegram.ext import CallbackContext
 
 from telegrambot.models import BotAnswer
+from accounts.models import User, UserType
 
 
 def get_user_keyboard(user: User):
+    """
+    Возвращает клавиатуру в зависимости от типа пользователя
+    """
+
     if user.type.id_name == 'teacher':
         return keyboards.TEACHER_MENU_KEYBOARD
     else:
@@ -15,6 +19,10 @@ def get_user_keyboard(user: User):
 
 
 def change_user_type(update: Update, context: CallbackContext):
+    """
+    Изменяет тип пользователя (только для superuser)
+    """
+
     if not User.objects.filter(telegram_id=update.message.chat_id).exists():
         update.message.reply_text(BotAnswer.objects.get(query='Не понимаю').text)
         return

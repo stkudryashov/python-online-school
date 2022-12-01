@@ -1,15 +1,23 @@
 from rest_framework import serializers
 
-from accounts.models import *
+from accounts.models import User, UserInfo, UserType, UserPermission
 
 
 class UserPermissionSerializer(serializers.ModelSerializer):
+    """
+    Serializer для прав пользователей
+    """
+
     class Meta:
         model = UserPermission
         fields = ('permission', 'title')
 
 
 class UserTypeSerializer(serializers.ModelSerializer):
+    """
+    Serializer для типов пользователей
+    """
+
     permissions = UserPermissionSerializer(read_only=True, many=True)
 
     class Meta:
@@ -18,6 +26,10 @@ class UserTypeSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    Serializer для регистрации и получения прав
+    """
+
     email = serializers.EmailField(required=True)
     password = serializers.CharField(write_only=True, required=True)
 
@@ -33,6 +45,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserUpdateSerializer(serializers.ModelSerializer):
+    """
+    Serializer для обновления данных пользователей
+    """
+
     first_name = serializers.CharField(max_length=48, required=True)
     last_name = serializers.CharField(max_length=48, required=True)
 
@@ -42,13 +58,22 @@ class UserUpdateSerializer(serializers.ModelSerializer):
 
 
 class UserInfoSerializer(serializers.ModelSerializer):
+    """
+    Serializer для контактов пользователей
+    """
+
     user = UserUpdateSerializer(write_only=True)
 
     class Meta:
         model = UserInfo
         fields = ('user', 'date_of_birth', 'phone_number', 'city', 'about_me')
 
+    # TODO: переписать это говно на нормальный код
     def update(self, instance, validated_data):
+        """
+        Обновление профиля пользователя
+        """
+
         user_info = validated_data.pop('user')
 
         instance.user.first_name = user_info.get('first_name')
